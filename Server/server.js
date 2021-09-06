@@ -34,9 +34,9 @@ app.use('/js', express.static(path.join(__dirname, '../Pages/main.js')))
 //axios calls
 const baseURL = process.env.baseURL || "http://localhost:4000"
 
-app.get(`${baseURL}/races`,(req,res)=>{
-    res.status(200).send(races)
-})
+// app.get(`${baseURL}/races`,(req,res)=>{
+//     res.status(200).send(races)
+// })
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, ()=>{

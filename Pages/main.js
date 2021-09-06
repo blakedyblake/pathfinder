@@ -2,6 +2,7 @@
 
 // const { response } = require("express")
 const baseURL = process.env.baseURL || "http://localhost:4000"
-axios.get(`${baseURL}/races`,(response)=>{
-    console.log(response.data)
-})
+console.log(baseURL);
+// axios.get(`${baseURL}/races`,(response)=>{
+//     console.log(response.data)
+// })
