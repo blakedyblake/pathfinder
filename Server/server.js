@@ -30,7 +30,11 @@ app.get('/js', (req,res)=>{
 app.use('/css', express.static(path.join(__dirname, '../Style/main.css')))
 app.use('/js', express.static(path.join(__dirname, '../Pages/main.js')))
 
-app.get('/races',(req,res)=>{
+
+//axios calls
+const baseURL = process.env.baseURL || "http://localhost:4000"
+
+app.get(`${baseURL}/races`,(req,res)=>{
     res.status(200).send(races)
 })
 
