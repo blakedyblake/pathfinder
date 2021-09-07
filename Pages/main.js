@@ -1,8 +1,8 @@
-// const { default: axios } = require("axios");
+const { default: axios } = require("axios")
 
-// const { response } = require("express")
-// const baseURL = process.env.baseURL || "http://localhost:4000"
-// console.log(baseURL);
-// axios.get(`${baseURL}/races`,(response)=>{
-//     console.log(response.data)
-// })
+const baseURL = 'https://assesment6.herokuapp.com/'
+
+axios.get(baseURL + 'races')
+.then((res)=>{
+    console.log(res.data)
+})

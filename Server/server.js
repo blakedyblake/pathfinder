@@ -2,16 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const path = require('path')
 const app = express()
-const races = {
-    "Elf":{
-
-    },
-    "Dwarf":{
-
-    },
-    "Human":{}
-}
-//require('./Databases/races.js')
+const races = require('./Databases/races.js')
 
 app.use(express.json())
 app.use(cors())
@@ -29,14 +20,15 @@ app.get('/js', (req,res)=>{
 
 app.use('/css', express.static(path.join(__dirname, '../Style/main.css')))
 app.use('/js', express.static(path.join(__dirname, '../Pages/main.js')))
+app.use('/raceDB',express.static(path.join(__dirname,'./Databases/races.js')))
 
 
 //axios calls
 const baseURL = process.env.baseURL || "http://localhost:4000"
 
-// app.get(`${baseURL}/races`,(req,res)=>{
-//     res.status(200).send(races)
-// })
+app.get(`/races`,(req,res)=>{
+    res.status(200).send(races)
+})
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, ()=>{
