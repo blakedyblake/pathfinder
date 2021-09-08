@@ -1,0 +1,207 @@
+@import 'variables';
+*{
+   background-color: black; 
+   color: $writing-color;
+
+}
+body {
+    background-color: black;
+}
+
+
+$race-sel-pos: 5%;
+$sel-distance: 11%;
+$left-start:10%;;
+$multiplier: 2.4;
+#race-selector {
+    position:absolute;
+    top: $race-sel-pos;
+    left: $left-start
+
+}
+$back-col:$left-start + $sel-distance * $multiplier;
+#background-selector {
+    position: absolute;
+    top:$race-sel-pos;
+    left:$back-col;
+
+}
+$class-col: $back-col +$sel-distance * $multiplier *1.2;
+#class-selector {
+    position:absolute;
+    top:$race-sel-pos;
+    left: $class-col
+}
+
+$i:0;
+$stat-dist : 2%;
+$temp: $race-sel-pos + $stat-dist;
+$max-boosts: 3;
+
+
+
+@while $i < $max-boosts {
+    #race-boost-#{$i}{
+        position: absolute;
+        top: $temp;
+        //left:$temp;
+    }
+    $temp: $temp + $stat-dist;
+
+    $i : $i +1;
+
+    
+}
+$temp:$race-sel-pos + $stat-dist;
+.race{
+    position: absolute;
+    left:$left-start;
+}
+.class{
+    position: absolute;
+    left:$class-col;
+    top: $temp
+}
+
+.background {
+    position: absolute;
+    left:$back-col;
+    top:$temp;
+}
+
+$i:0;
+
+@while $i < $max-boosts {
+    #background-boost-#{$i}{
+        position: absolute;
+        top: $temp;
+    }
+    $temp: $temp + $stat-dist;
+    $i: $i +1;
+}
+
+#stat-submit{
+    position: absolute;
+    top: $race-sel-pos +6%;
+    left: $class-col;
+    color:$tertiary-color;
+    text-shadow: black 2px 2px 2px;
+    background-color: $secondary-color;
+    border-radius: 19px;
+    padding: 5px;
+}
+
+#statTable {
+    position: absolute;
+    left:$back-col - 15%;
+    top: $race-sel-pos +15%;
+    //border-radius: 25px;
+    background-color: $tertiary-color;
+
+}
+
+table{
+    background-color: $tertiary-color;
+
+}
+
+h2{
+    position:absolute;
+    left:$back-col - 15%;
+    top: $race-sel-pos +10%;
+    background-color: rgba(0,0,0,0);
+}
+img {
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    height:65%;
+    opacity: 0.7
+
+}
+
+form {
+    position: absolute;
+    top: 65%;
+    left: 17% + 3%;
+
+    width: 50.5%;
+    height:200%;
+
+    background-color: $primary-color;
+}
+h1 {
+    background-color: rgba(0,0,0,0);
+}
+tr{
+    background-color: $tertiary-color;
+}
+//Here I start programming the style on page two
+#second-img{
+    width:50.5%;
+    height:auto;
+    opacity:1.0;
+}
+$second-top: 27%;
+#second-to-main{
+    position:absolute;
+    top:$second-top;
+
+}
+
+
+#select_record{
+    position: absolute;
+    top:$second-top + 2%;
+    left:2%;
+    background-color: rgba(0,0,0,0);
+    p{
+        background-color: rgba(0,0,0,0);
+    }
+
+}
+   
+$chart-pos:  $second-top +10%;
+#main-results{
+    position: absolute;
+    top:$chart-pos;
+    left:10%;
+}
+
+$init-left: 45%;
+#second{
+    #submit{
+        position: absolute;
+        top: $second-top + 22%;
+        left:30%;
+    }
+    #lvl-selector{
+        position: absolute;
+        top: $second-top + 2%;
+        left:30%;
+    }
+    #L1{
+        position: absolute;
+        top:$chart-pos;
+        left:$init-left;
+        background-color: rgba(0,0,0,0);
+
+    }
+    $i : 1;
+    $space:8%;
+    @while $i < 7 {
+        #L#{$i*5}{
+            position: absolute;
+            top: $chart-pos;
+            left: $init-left + $space;
+            background-color: rgba(0,0,0,0);
+
+        }
+        $init-left: $init-left + $space;
+        $i: $i +1;
+    }
+}
+label{
+    background-color: rgba(0,0,0,0);
+
+}
