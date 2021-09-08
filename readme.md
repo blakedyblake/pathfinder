@@ -6,6 +6,9 @@
 ## Tutorial video
 * https://vimeo.com/600451779
 
+## Screenshots
+* see screenshots folder 
+
 ## Features
 * A class selector that gives an option for class (Either one predecided boost or a choice between two)
 * A background selector (Two boosts, one free the other a decsion between 2)
