@@ -137,22 +137,22 @@ const getChecks = ()=>{
         newDiv.id = `L${lev}`
         newDiv.classList.add('level-boosts')
         newDiv.innerHTML = (
-            `<input type="checkbox" id="${lev.toString()}-Str">
+            `<input type="checkbox" id="${lev.toString()}-Str",value='Str'>
             <label for="${lev.toString()}-Str">Str</label><br>
 
-            <input type="checkbox" id="${lev.toString()}-Dex">
+            <input type="checkbox" id="${lev.toString()}-Dex",value='Dex'>
             <label for="${lev.toString()}-Dex">Dex</label><br>
 
-            <input type="checkbox" id="${lev.toString()}-Con">
+            <input type="checkbox" id="${lev.toString()}-Con",value='Con'>
             <label for="${lev.toString()}-Con">Con</label><br>
 
-            <input type="checkbox" id="${lev.toString()}-Wis">
+            <input type="checkbox" id="${lev.toString()}-Wis",value='Wis'>
             <label for="${lev.toString()}-Wis">Wis</label><br>
 
-            <input type="checkbox" id="${lev.toString()}-Int">
+            <input type="checkbox" id="${lev.toString()}-Int", value='Int'>
             <label for="${lev.toString()}-Int">Int</label><br>
 
-            <input type="checkbox" id="${lev.toString()}-Cha">
+            <input type="checkbox" id="${lev.toString()}-Cha", value='Cha'>
             <label for="${lev.toString()}-Cha">Cha</label><br>
         ` )
 
@@ -164,6 +164,24 @@ const getChecks = ()=>{
 }
 
 document.getElementById('lvl-selector').addEventListener('change',getChecks)
+
+//Caclulates selected boosts //Add limit
+const inputs = document.querySelectorAll('input')
+for(let i =0; i < inputs.length; i++){
+    inputs[i].addEventListener('change',modTable(input[i]))
+}
+
+
+
+const modTable = (input)=>{
+    console.log('check')
+}
+
+
+
+
+
+
 
 const boostStat = (stat)=>{
     return stat > 17 ? 1: 2
