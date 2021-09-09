@@ -4,7 +4,7 @@
 * So far it's only for stats
 
 ## Tutorial video
-* https://vimeo.com/600528072
+* https://drive.google.com/file/d/1FRyWbKd4ZvFBkudwtrb30YoIsPO_diJz/view
 
 ## Screenshots
 * see screenshots folder 
